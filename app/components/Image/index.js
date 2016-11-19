@@ -39,6 +39,10 @@ export default styled(Image)`
   }
 
   & > .cancel-button {
+    &:hover {
+      cursor: pointer;
+    }
+
     position: absolute;
     height: 20px;
     width: 20px;

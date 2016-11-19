@@ -16,14 +16,10 @@ import ColorBlock from '../../components/ColorBlock'
 import Dropper from '../../components/Dropper'
 import EditSwitcher from '../../components/EditSwitcher'
 import GalleryContent from '../../components/GalleryContent'
-import Tab from '../../components/Tab'
 import TabList from '../../components/TabList'
 
 export class Gallery extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
-    console.log('hello!')
-
-    console.log('this.props', this.props);
     const { className, tabs, isEdit, onTabIndexChange, onFileDrop, onEditSwitch, onPhotoRemove } = this.props
     const activeTab = tabs.find((tab) => tab.isActive)
     const activeTabIndex = tabs.findIndex((tab) => tab.isActive)
@@ -57,7 +53,6 @@ export class Gallery extends React.Component { // eslint-disable-line react/pref
 Gallery = styled(Gallery)`
   padding: 10%;
   margin: auto;
-
 `
 
 const mapStateToProps = selectGallery();

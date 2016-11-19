@@ -5,18 +5,11 @@
  */
 
 import {
-  DEFAULT_ACTION,
   SET_ACTIVE_TAB,
   ADD_FILE,
   EDIT_SWITCH,
   PHOTO_REMOVE
 } from './constants';
-
-export function defaultAction() {
-  return {
-    type: DEFAULT_ACTION,
-  };
-}
 
 export function onTabIndexChange(index) {
   return {
@@ -39,7 +32,6 @@ export function onEditSwitch() {
 }
 
 export function onPhotoRemove(tabIndex, photoIndex) {
-  console.log('remove!', tabIndex,photoIndex)
   return {
     type: PHOTO_REMOVE,
     tabIndex,

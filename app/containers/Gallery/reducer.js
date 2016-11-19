@@ -7,7 +7,6 @@
 import { fromJS } from 'immutable';
 import { getTestImages } from './mock'
 import {
-  DEFAULT_ACTION,
   SET_ACTIVE_TAB,
   ADD_FILE,
   EDIT_SWITCH,
@@ -34,8 +33,6 @@ const initialState = fromJS({
 
 function galleryReducer(state = initialState, action) {
   switch (action.type) {
-    case DEFAULT_ACTION:
-      return state;
     case ADD_FILE:
       const fileTabs = state.get('tabs').toJS().map((tab, i) => {
         if (tab.isActive)

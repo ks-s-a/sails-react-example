@@ -18,7 +18,6 @@ class GalleryContent extends React.Component { // eslint-disable-line react/pref
 
 
   onImageClick(imageIndex) {
-    console.log('click!')
     this.setState({
       isLightboxOpen: true,
       currentImage: imageIndex,
