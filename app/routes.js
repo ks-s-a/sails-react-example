@@ -18,7 +18,7 @@ export default function createRoutes(store) {
 
   return [
     {
-      path: '/',
+      path: '/home',
       name: 'home',
       getComponent(nextState, cb) {
         const importModules = Promise.all([
@@ -45,6 +45,24 @@ export default function createRoutes(store) {
         System.import('containers/FeaturePage')
           .then(loadModule(cb))
           .catch(errorLoading);
+      },
+    }, {
+      path: '/',
+      name: 'gallery',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/Gallery/reducer'),
+          System.import('containers/Gallery'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([reducer, component]) => {
+          injectReducer('gallery', reducer.default);
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
       },
     }, {
       path: '*',
